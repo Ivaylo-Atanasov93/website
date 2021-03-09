@@ -1,0 +1,32 @@
+.list-horizontal-pictures {
+    text-align: center;
+}
+
+.list-item-picture {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    margin: 20px;
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.picture-details a {
+    padding: 15px;
+    color: #2c1b04;
+}
+
+.message {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 20px;
+    color: white;
+    width: 800px;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+}
