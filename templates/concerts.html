@@ -1,0 +1,43 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/concerts.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Concert Schedule
+{% endblock %}
+{% block site_content %}
+    <center>
+        {% if object_list %}
+
+            {% for element in object_list %}
+                <ul class="concerts-list">
+                    <li>
+                        <div class="concert-list-element">
+                            <div class="concert-details">
+
+                                <h1>{{ element.title }}</h1>
+                                <p class="details">{{ element.description }}</p>
+                                <h3 class="details-date">{{ element.date }} at {{ element.time }}</h3>
+                            </div>
+                            <div class="concert-location">
+                                <h2>Location:</h2>
+                                <h3 class="location">
+                                    <iframe src="{{ element.location }}" width="300" height="300" style="border:0;"
+                                            allowfullscreen="" loading="lazy"></iframe>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            {% endfor %}
+        {% else %}
+            <div class="concert-list-element">
+                <h1><i class="fas fa-info-circle" style="color: #ffd11a"></i> Unfortunately there are no upcoming
+                    concerts now.</h1>
+            </div>
+        {% endif %}
+    </center>
+{% endblock %}

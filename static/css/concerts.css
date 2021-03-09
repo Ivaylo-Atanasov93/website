@@ -1,0 +1,49 @@
+.concert-list-element{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    width: 75%;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    margin: 40px;
+    text-align: left;
+}
+
+.concert-details, .concert-location{
+    display: inline-block;
+}
+
+.concert-details {
+    width: 55%;
+
+}
+
+.concert-location{
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.location {
+    width: 340px;
+    height: 340px;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    vertical-align: top;
+    margin-left: 70px;
+}
+
+.details {
+    width: 100%;
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+
+
+iframe{
+    margin: 20px;
+}

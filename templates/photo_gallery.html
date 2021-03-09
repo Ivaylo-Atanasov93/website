@@ -1,0 +1,37 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/photo_gallery.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Photo Gallery
+{% endblock %}
+{% block site_content %}
+    {% if object_list %}
+        <div class="gallery">
+            <ul class="list-horizontal-pictures">
+                {% for element in object_list %}
+                    <li class="list-item-picture">
+                        <a href="{% url 'image-detail' element.id %}">
+                            <img src="{{ element.photo.url }}" alt="Image of {{ element.title }}">
+                        </a>
+                        <div class="picture-details">
+                            <h3>{{ element.description }}</h3>
+                            <h3>{{ element.date }}</h3>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    {% else %}
+        <center>
+            <div class="message">
+                <h1><i class="fas fa-info-circle" style="color: #ffd11a"></i> Unfortunately there are no pictures yet.
+                </h1>
+            </div>
+        </center>
+    {% endif %}
+{% endblock %}

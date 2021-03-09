@@ -1,0 +1,55 @@
+<header>
+    <nav class="site-nav">
+        <ul class="list-horizontal">
+            <li class="list-item">
+                <a href="{% url 'index' %}">
+                    <button class="nav-button">
+                        Home
+                    </button>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'biography' %}">
+                    <button class="nav-button">
+                        Biography
+                    </button>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'concerts' %}">
+                    <button class="nav-button">
+                        Concerts
+                    </button>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'photo_gallery' %}">
+                    <button class="nav-button">
+                        Photos
+                    </button>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'video_gallery' %}">
+                    <button class="nav-button">
+                        Videos
+                    </button>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'contact-create' %}">
+                    <button class="nav-button">
+                        Contact me
+                    </button>
+                </a>
+            </li>
+            <li class="list-item booking-button">
+                <a href="{% url 'booking' %}">
+                    <button class="nav-button">
+                        Book a lesson
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

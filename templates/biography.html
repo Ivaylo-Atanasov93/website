@@ -1,0 +1,125 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/biography.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Biography
+{% endblock %}
+{% block site_content %}
+    <center>
+        {% if object_list %}
+            <ul>
+                {% for element in object_list %}
+                    <div class="container">
+                        <ul class="list-left">
+                            <li class="style name">
+                                <h1>{{ element.name }}</h1>
+                            </li>
+                            <li class="style">
+                                <h4>{{ element.specialization }}</h4>
+                            </li>
+                            <li class="style summary">
+                                <h3 class="underline">Summary</h3>
+                                {{ element.summary }}
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Education</h3>
+                                <ul>
+                                    {% for education in element.education_set.all %}
+                                        <h5>|{{ education.start_date }} - {{ education.end_date }}</h5>
+                                        <h5>{{ education.name_of_institution }}</h5>
+                                        <h6>Speciality: {{ education.speciality }}</h6>
+                                        <p>Covered subjects:</p>
+                                        <p>{{ education.covered_subjects }}</p>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Extracurricular Courses</h3>
+                                <ul>
+                                    {% for experience in element.personalexperience_set.all %}
+                                        <h5>|{{ experience.topic_name }}</h5>
+                                        <p>Summary:<br> {{ experience.topic_summary }}</p>
+                                        <p><i class="fas fa-map-marker-alt symbol"></i> - {{ experience.location }}</p>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Working experience</h3>
+                                <ul>
+                                    {% for experience in element.workexperience_set.all %}
+                                        <h5>|{{ experience.start_date }} - {{ experience.end_date }}</h5>
+                                        <h5>{{ experience.name_of_institution }}</h5>
+                                        <h6>Speciality: {{ experience.position }}</h6>
+                                        <p>Work description:</p>
+                                        <p>{{ experience.position_summary }}</p>
+                                        <p>{{ experience.responsibilities }}</p>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Personal Achievements</h3>
+                                <ul>
+                                    {% for accomplishment in element.achievements_set.all %}
+                                        <li>
+                                            <p><i class="fas fa-bolt symbol"></i> {{ accomplishment.accomplishment }}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                        {# END OF LEFT #}
+                        <ul class="list-right">
+                            <li class="style">
+                                <img class="picture" src="{{ element.picture.url }}" alt="Image of {{ element.name }}">
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Contacts</h3>
+                                <p><i class="fas fa-map-marker-alt symbol"></i> - {{ element.address }}</p>
+                                <p><i class="fas fa-mobile-alt symbol"></i> - {{ element.number }}</p>
+                                <p><i class="far fa-envelope symbol"></i> - {{ element.email }}</p>
+                                <p><i class="fas fa-passport symbol"></i> - {{ element.nationality }}</p>
+                                <p><i class="fas fa-birthday-cake symbol"></i> - {{ element.date_of_birth }}</p>
+                                <p><i class="fas fa-venus-mars symbol"></i> - {{ element.gender }}</p>
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Languages</h3>
+                                <ul>
+                                    {% for language in element.languages_set.all %}
+                                        <li>
+                                            <p><i class="fas fa-globe-americas"></i> {{ language.language }}
+                                                - {{ language.fluency }}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="style">
+                                <h3 class="underline">Passions</h3>
+                                <ul>
+                                    {% for passion in element.passions_set.all %}
+                                        <li>
+                                            <p><i class="fas fa-rocket symbol"></i> - {{ passion.passion }}</p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <center>
+                <div class="style">
+                    <h1>
+                        <i class="fas fa-info-circle" style="color: #ffd11a"></i> There is no uploaded Biography yet.
+                    </h1>
+                </div>
+            </center>
+        {% endif %}
+    </center>
+{% endblock %}

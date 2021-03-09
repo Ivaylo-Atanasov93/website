@@ -1,0 +1,33 @@
+.appointment-block {
+    /*Option I*/
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    width: 75%;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    margin: 40px;
+    display: block;
+
+    /*Option II*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    /*color: white;*/
+    /*padding: 5%;*/
+    /*min-width: 100%;*/
+    /*min-height: 80vh;*/
+}
+
+
+.row{
+    margin: 30px;
+}
+
+.message-row{
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.book-button{
+    width: 800px;
+}
