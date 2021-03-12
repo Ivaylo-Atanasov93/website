@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class Biography(models.Model):
     name = models.CharField(max_length=200, blank=False)
-    picture = models.ImageField(upload_to='images')
+    picture_url = models.CharField(max_length=500)
     specialization = models.CharField(max_length=200, blank=False)
     address = models.CharField(max_length=300, blank=False)
     number = models.CharField(max_length=15, blank=False)
