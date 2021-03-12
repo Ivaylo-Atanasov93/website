@@ -15,7 +15,7 @@
                 {% for element in object_list %}
                     <li class="list-item-picture">
                         <a href="{% url 'image-detail' element.id %}">
-                            <img src="{{ element.photo.url }}" alt="Image of {{ element.title }}">
+                            <img src="{{ element.photo_url }}" alt="Image of {{ element.title }}">
                         </a>
                         <div class="picture-details">
                             <h3>{{ element.description }}</h3>

@@ -11,7 +11,7 @@ from video_gallery.models import Video
 
 
 class PictureAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'photo', 'date')
+    list_display = ('title', 'description', 'photo_url', 'date')
     list_filter = ('title', 'date')
 
 

@@ -8,7 +8,7 @@ from django.urls import reverse
 class Picture(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-    photo = models.ImageField(upload_to='images')
+    photo_url = models.CharField(max_length=500)
     date = models.DateField(default=date.today)
 
     def get_absolute_url(self):
