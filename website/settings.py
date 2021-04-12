@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ft1z+fj2amp(4$!998hb3439h+@2u3z$(_v+nlcpy%cwk)y8m@'
+SECRET_KEY = '***********************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -145,7 +145,7 @@ STATICFILES_DIRS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'dimitar.kanchev1993@gmail.com'
-EMAIL_HOST_PASSWORD = 'yflrhgiwiposiqkd'  # Environmental variable
+EMAIL_HOST_PASSWORD = 'y**************'  # Environmental variable
 EMAIL_USE_TLS = True
 '''
 TODO
