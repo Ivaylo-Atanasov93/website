@@ -24,7 +24,7 @@ class BookingCreateView(CreateView):
         customers_message = form.cleaned_data.get('message')
         message = f'Message from {name} {surname}\n'
         message += f'The lesson is booked on {date} at {time}\n'
-        message += f'\n\n{customers_message}'
+        message += f'\n\n{customers_message}\n'
         message += f'Contacts:\nPhone: {number}\nE-mail: {email}'
         send_mail(
             subject=f'New booked lesson from {name} {surname}!',
