@@ -17,9 +17,9 @@ class ContactCreateView(CreateView):
         surname = form.cleaned_data.get('surname')
         email = form.cleaned_data.get('email')
         customers_message = form.cleaned_data.get('message')
-        message = f'Message from {name} {surname}\n'
-        message += f'\n\n{customers_message}'
-        message += f'Contacts:\nE-mail: {email}'
+        message = f'Message from {name} {surname}\n\n'
+        message += f'\n\n{customers_message}\n\n'
+        message += f'Contacts:\n\nE-mail: {email}'
         send_mail(
             subject=f'New booked lesson from {name} {surname}!',
             message=message,
