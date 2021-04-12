@@ -15,23 +15,23 @@ class BookingCreateView(CreateView):
 
     def form_valid(self, form):
 
-        # name = form.cleaned_data.get('name')
-        # surname = form.cleaned_data.get('surname')
-        # number = form.cleaned_data.get('number')
-        # email = form.cleaned_data.get('email')
-        # date = form.cleaned_data.get('date')
-        # time = form.cleaned_data.get('time')
-        # customers_message = form.cleaned_data.get('message')
-        # message = f'Message from {name} {surname}\n'
-        # message += f'The lesson is booked on {date} at {time}\n'
-        # message += f'\n\n{customers_message}'
-        # message += f'Contacts:\nPhone: {number}\nE-mail: {email}'
-        # send_mail(
-        #     subject=f'New booked lesson from {name} {surname}!',
-        #     message=message,
-        #     from_email='contact-form@myapp.com',
-        #     recipient_list=[email, '@owners_email'],
-        # )
+        name = form.cleaned_data.get('name')
+        surname = form.cleaned_data.get('surname')
+        number = form.cleaned_data.get('number')
+        email = form.cleaned_data.get('email')
+        date = form.cleaned_data.get('date')
+        time = form.cleaned_data.get('time')
+        customers_message = form.cleaned_data.get('message')
+        message = f'Message from {name} {surname}\n'
+        message += f'The lesson is booked on {date} at {time}\n'
+        message += f'\n\n{customers_message}'
+        message += f'Contacts:\nPhone: {number}\nE-mail: {email}'
+        send_mail(
+            subject=f'New booked lesson from {name} {surname}!',
+            message=message,
+            from_email='dimitar.kanchev1993@gmail.com',
+            recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
+        )
 
         return super().form_valid(form)
 

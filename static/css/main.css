@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    background: url("/static/css/backgrounds/2.jpg") no-repeat center center fixed;
+    background: url("/static/css/backgrounds/5.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -20,7 +20,7 @@ footer{
 }
 
 .site-nav {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
 }
 

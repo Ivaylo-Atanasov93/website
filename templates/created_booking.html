@@ -13,19 +13,21 @@
     <center>
         <div class="appointment-block">
             <div class="title">
-                <h1>You just booked a lesson!</h1>
+                <h1>Your request has been proceed!</h1>
             </div>
             <h2>
                 Details
             </h2>
             <div class="booking-details">
                 <p>Your initials: {{ object.name|make_list|first }}. {{ object.surname|make_list|first }}.</p>
-                <p>Your lesson will be on {{ object.date }} at {{ object.time }}.</p>
+                <p>Your preferred date and time: {{ object.date }} at {{ object.time }}.</p>
                 <p class="your-message">Your message to me: <br>"{{ object.message }}"</p>
             </div>
             <div class="my-message">
-                This is my message to you:
-                <br>Some message
+                <br>
+                <h6>Thank you for reaching out and giving me your preferred date and time!</h6>
+                <p>I look forward to read your message and contact you back to discuss the details.</p>
+                <p></p>
             </div>
         </div>
     </center>

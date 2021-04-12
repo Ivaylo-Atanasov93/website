@@ -3,12 +3,13 @@
 }
 
 .list-item-picture {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
 
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 
+    color: white;
     margin: 20px;
     margin-top: 50px;
     display: inline-block;

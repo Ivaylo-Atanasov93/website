@@ -21,8 +21,8 @@
 .container {
     max-width: 80%;
     display: grid;
-    background-color: #ffd11a;
-    border: 1px solid #ffd11a;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 
     margin: 5%;

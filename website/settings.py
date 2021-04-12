@@ -29,7 +29,7 @@ SECRET_KEY = 'ft1z+fj2amp(4$!998hb3439h+@2u3z$(_v+nlcpy%cwk)y8m@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
@@ -136,11 +136,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'dimitar.kanchev1993@gmail.com'
+EMAIL_HOST_PASSWORD = 'yflrhgiwiposiqkd'  # Environmental variable
+EMAIL_USE_TLS = True
+'''
+TODO
+Variant 1:
+Setting - Less secure apps.
+link: myaccount.google.com/lesssecureapps -> turn ON
+link: accounts.google.com/DisplayUnlockCaptcha -> Continue
+
+Variant 2:
+Enable two factor authentication on gmail
+myaccount.google.com/apppasswords
+'''
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'

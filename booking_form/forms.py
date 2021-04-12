@@ -30,7 +30,7 @@ class BookingForm(ModelForm):
         'placeholder': 'Your message',
         'class': 'form-control',
     }))
-    date = forms.DateField(widget=DateInput(attrs={'class': 'form-control'}), validators=[clean_date])
+    date = forms.DateField(widget=DateInput(attrs={'class': 'form-control', 'placeholder': 'Preferred date'}), validators=[clean_date])
 
     class Meta:
         model = Booking
@@ -44,7 +44,7 @@ class BookingForm(ModelForm):
             'message',
         ]
         TIME_CHOICES = (
-            ('', 'Select time'),
+            ('', 'Preferred time'),
             ('09:00:00', '09:00'),
             ('10:00:00', '10:00'),
             ('11:00:00', '11:00'),
