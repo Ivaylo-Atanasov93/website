@@ -1,55 +1,82 @@
-<header>
-    <nav class="site-nav">
-        <ul class="list-horizontal">
-            <li class="list-item">
-                <a href="{% url 'index' %}">
-                    <button class="nav-button">
-                        Home
-                    </button>
+<header class="u-black u-clearfix u-header u-header" id="sec-5697">
+    <div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+                <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-palette-3-base u-text-active-palette-1-base u-text-hover-palette-2-base"
+                   href="#" style="padding: 4px 8px; font-size: calc(1em + 8px);">
+                    <svg viewBox="0 0 24 24">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                <rect y="1" width="16" height="2"></rect>
+                                <rect y="7" width="16" height="2"></rect>
+                                <rect y="13" width="16" height="2"></rect>
+                            </symbol>
+                        </defs>
+                    </svg>
                 </a>
-            </li>
-            <li class="list-item">
-                <a href="{% url 'biography' %}">
-                    <button class="nav-button">
-                        Biography
-                    </button>
-                </a>
-            </li>
-            <li class="list-item">
-                <a href="{% url 'concerts' %}">
-                    <button class="nav-button">
-                        Concerts
-                    </button>
-                </a>
-            </li>
-            <li class="list-item">
-                <a href="{% url 'photo_gallery' %}">
-                    <button class="nav-button">
-                        Photos
-                    </button>
-                </a>
-            </li>
-            <li class="list-item">
-                <a href="{% url 'video_gallery' %}">
-                    <button class="nav-button">
-                        Videos
-                    </button>
-                </a>
-            </li>
-            <li class="list-item">
-                <a href="{% url 'contact-create' %}">
-                    <button class="nav-button">
-                        Contact me
-                    </button>
-                </a>
-            </li>
-            <li class="list-item booking-button">
-                <a href="{% url 'booking' %}">
-                    <button class="nav-button">
-                        Book a lesson
-                    </button>
-                </a>
-            </li>
-        </ul>
-    </nav>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul class="u-nav u-unstyled u-nav-1">
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'index' %}" style="padding: 10px 42px;">Home</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'booking' %}" style="padding: 10px 42px;">Teaching</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'biography' %}" style="padding: 10px 42px;">My story</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'video_gallery' %}" style="padding: 10px 42px;">Video Gallery</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'concerts' %}" style="padding: 10px 42px;">Concerts</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-base"
+                            href="{% url 'contact-create' %}" style="padding: 10px 42px;">Contact me</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse">
+                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                    <div class="u-inner-container-layout u-sidenav-overflow">
+                        <div class="u-menu-close"></div>
+                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'index' %}"
+                                                      style="padding: 10px 42px;">Home</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'booking' %}"
+                                                      style="padding: 10px 42px;">Teaching</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'biography' %}"
+                                                      style="padding: 10px 42px;">My story</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'video_gallery' %}"
+                                                      style="padding: 10px 42px;">Video Gallery</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'concerts' %}"
+                                                      style="padding: 10px 42px;">Concerts</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact-create' %}"
+                                                      style="padding: 10px 42px;">Contact me</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+            </div>
+        </nav>
+        <h3 class="u-headline u-text u-text-palette-3-base u-text-1">
+            <a href="/">DIMITAR KANCHEV</a>
+        </h3>
+    </div>
 </header>

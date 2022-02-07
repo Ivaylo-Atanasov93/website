@@ -19,7 +19,7 @@
                 Details
             </h2>
             <div class="booking-details">
-                <p>Your initials: {{ object.name|make_list|first }}. {{ object.surname|make_list|first }}.</p>
+                <p>Your initials: {{ object.name }}.</p>
                 <p>Your preferred date and time: {{ object.date }} at {{ object.time }}.</p>
                 <p class="your-message">Your message to me: <br>"{{ object.message }}"</p>
             </div>

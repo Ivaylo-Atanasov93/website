@@ -6,8 +6,7 @@ from django.urls import reverse
 
 
 class ContactMe(models.Model):
-    name = models.CharField(max_length=50, blank=False)
-    surname = models.CharField(max_length=50, blank=False)
+    name = models.CharField(max_length=255, blank=False)
     email = models.EmailField(blank=False)
     message = models.TextField(max_length=5000, blank=False)
     date = models.DateField(auto_now=True)

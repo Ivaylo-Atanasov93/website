@@ -14,13 +14,6 @@ def clean_name(name):
     return name
 
 
-def clean_surname(surname):
-    regex = r"^[A-Z]{1}[a-z]+$"
-    if not re.match(regex, surname):
-        raise ValidationError('The surname must start with a capital letter.')
-    return surname
-
-
 def clean_number(number):
     number = phonenumbers.parse("+442083661177", None)
     if not phonenumbers.is_valid_number(number):

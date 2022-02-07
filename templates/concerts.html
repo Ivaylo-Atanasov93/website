@@ -10,34 +10,58 @@
 {% endblock %}
 {% block site_content %}
     <center>
-        {% if object_list %}
+        <section class="u-black u-clearfix u-section-1" id="sec-f775">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Live Concerts</h2>
+                <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-spacing-vertical u-layout-wrap u-layout-wrap-1">
+                    <div class="u-gutter-0 u-layout">
+                        <div class="u-layout-row">
+                            <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
+                                <div class="u-container-layout u-container-layout-1">
+                                    {% if object_list %}
 
-            {% for element in object_list %}
-                <ul class="concerts-list">
-                    <li>
-                        <div class="concert-list-element">
-                            <div class="concert-details">
-
-                                <h1>{{ element.title }}</h1>
-                                <p class="details">{{ element.description }}</p>
-                                <h3 class="details-date">{{ element.date }} at {{ element.time }}</h3>
-                            </div>
-                            <div class="concert-location">
-                                <h2>Location:</h2>
-                                <h3 class="location">
-                                    <iframe src="{{ element.location }}" width="300" height="300" style="border:0;"
-                                            allowfullscreen="" loading="lazy"></iframe>
-                                </h3>
+                                        {% for element in object_list %}
+                                            <ul class="concerts-list" style="list-style: none;">
+                                                <li>
+                                                    <div class="u-border-4 u-border-palette-3-base u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+                                                        <div class="u-container-layout u-container-layout-2">
+                                                            <iframe class="u-image u-image-1"
+                                                                    src="{{ element.location }}" data-image-width="256"
+                                                                    data-image-height="256" allowfullscreen=""
+                                                                    loading="lazy"></iframe>
+                                                            <h3 class="u-text u-text-default u-text-palette-3-base u-text-2">{{ element.title }}</h3>
+                                                            <p class="u-text u-text-3">{{ element.description }}</p>
+                                                            <p class="u-text u-text-3">{{ element.date }}
+                                                                at {{ element.time }}</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        {% endfor %}
+                                    {% else %}
+                                        <ul class="concerts-list" style="list-style: none;">
+                                            <li>
+                                                <div class="u-border-4 u-border-palette-3-base u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+                                                    <div class="u-container-layout u-container-layout-2">
+                                                        <iframe class="u-image u-image-1"
+                                                                src="None" data-image-width="256"
+                                                                data-image-height="256" allowfullscreen=""
+                                                                loading="lazy"></iframe>
+                                                        <h3 class="u-text u-text-default u-text-palette-3-base u-text-2">
+                                                            Unfortunately there are no upcoming concerts now.</h3>
+                                                        <p class="u-text u-text-3">Keep checking on this page for future concerts.</p>
+                                                        <p class="u-text u-text-3"></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
-            {% endfor %}
-        {% else %}
-            <div class="concert-list-element">
-                <h1><i class="fas fa-info-circle" style="color: #ffd11a"></i> Unfortunately there are no upcoming
-                    concerts now.</h1>
+                    </div>
+                </div>
             </div>
-        {% endif %}
+        </section>
     </center>
 {% endblock %}

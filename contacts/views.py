@@ -14,18 +14,17 @@ class ContactCreateView(CreateView):
 
     def form_valid(self, form):
         name = form.cleaned_data.get('name')
-        surname = form.cleaned_data.get('surname')
         email = form.cleaned_data.get('email')
         customers_message = form.cleaned_data.get('message')
-        message = f'Message from {name} {surname}\n\n'
+        message = f'Message from {name}\n\n'
         message += f'\n\n{customers_message}\n\n'
         message += f'Contacts:\n\nE-mail: {email}'
-        send_mail(
-            subject=f'New booked lesson from {name} {surname}!',
-            message=message,
-            from_email='dimitar.kanchev1993@gmail.com',
-            recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
-        )
+        # send_mail(
+        #     subject=f'New booked lesson from {name}!',
+        #     message=message,
+        #     from_email='dimitar.kanchev1993@gmail.com',
+        #     recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
+        # )
 
         return super().form_valid(form)
 

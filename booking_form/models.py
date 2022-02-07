@@ -5,8 +5,7 @@ from django.urls import reverse
 
 class Booking(models.Model):
 
-    name = models.CharField(max_length=50, blank=False)
-    surname = models.CharField(max_length=50, blank=False)
+    name = models.CharField(max_length=255, blank=False)
     number = models.CharField(max_length=11, blank=False)
     email = models.EmailField(blank=False)
     date = models.DateField(blank=False)

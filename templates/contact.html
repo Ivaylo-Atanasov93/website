@@ -3,49 +3,76 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/booking_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock %}
 
 {% block site_title %}
     Contact me
 {% endblock %}
 {% block site_content %}
-    <center>
-        <div class="appointment-block">
-            <div class="title">
-                <h1>Contact me</h1>
-            </div>
-            <div class="form">
-                <div class="form-label">
-                    <form method="post" action={% url 'contact-create' %}>
-                        {% csrf_token %}
-                        {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in field.errors %}
-                                    <div class="alert alert-danger message-row">
-                                        {{ error | escape }}
-                                    </div>
-                                {% endfor %}
-                            {% endfor %}
-                        {% endif %}
-                        <div class="row">
-                            <div class="col">
-                                {{ form.name }}
-                            </div>
-                            <div class="col">
-                                {{ form.surname }}
+    <section class="u-black u-clearfix u-section-1" id="sec-a649">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-shape-rectangle u-size-21 u-layout-cell-1">
+                            <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-1">
+                                <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Follow me</h2>
+                                <div class="u-social-icons u-spacing-20 u-social-icons-1">
+                                    <a class="u-social-url" target="_blank" href="https://www.facebook.com/DimitarKanchev/"><span
+                                            class="u-file-icon u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1"><img
+                                            src="{% static '/images/145802.png' %}" alt=""></span>
+                                    </a>
+                                    <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href="https://www.youtube.com/channel/UCcI3ISPTiOLcuWw5DeDKR4w"><span
+                                            class="u-file-icon u-icon u-social-icon u-social-youtube u-icon-2"><img
+                                            src="{% static '/images/187209.png' %}" alt=""></span>
+                                    </a>
+                                    <a class="u-social-url" target="_blank" href="https://www.instagram.com/mitonch0/?hl=en"><span
+                                            class="u-file-icon u-icon u-icon-circle u-social-icon u-social-instagram u-icon-3"><img
+                                            src="{% static '/images/2111463.png' %}" alt=""></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="row message-row">
-                            {{ form.email }}
+                        <div class="u-container-style u-layout-cell u-shape-rectangle u-size-39 u-layout-cell-2">
+                            <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-2">
+                                <h2 class="u-text u-text-palette-3-base u-text-2">Contact Form</h2>
+                                <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+                                    <form action={% url 'contact-create' %} method="post"
+                                          class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+                                          style="padding: 10px" source="custom" name="form-2">
+                                        <div class="u-form-group u-form-name">
+                                            <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="u-form-email u-form-group">
+                                            <label for="email-da97" class="u-form-control-hidden u-label">Email</label>
+                                            {{ form.email }}
+                                        </div>
+                                        <div class="u-form-group u-form-message">
+                                            <label for="message-da97"
+                                                   class="u-form-control-hidden u-label">Message</label>
+                                            {{ form.message }}
+                                        </div>
+                                        <div class="u-align-center u-form-group u-form-submit">
+                                            <a href="{% url 'contact-create' %}"
+                                               class="u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1">Submit</a>
+                                            <input type="submit" value="submit" class="u-form-control-hidden">
+                                        </div>
+                                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message
+                                            has been sent.
+                                        </div>
+                                        <div class="u-form-send-error u-form-send-message"> Unable to send your message.
+                                            Please fix errors then try again.
+                                        </div>
+                                        <input type="hidden" value="{% url 'contact-create' %}" name="recaptchaResponse">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row message-row">
-                            {{ form.message }}
-                        </div>
-                        <button class="nav-button book-button" type="submit">Send</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </center>
+    </section>
 {% endblock %}

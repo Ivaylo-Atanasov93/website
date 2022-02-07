@@ -1,49 +1,188 @@
-.concert-list-element{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 15px;
-    width: 75%;
-
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-
-    margin: 40px;
-    text-align: left;
+.u-section-1 .u-sheet-1 {
+  min-height: 1035px;
 }
 
-.concert-details, .concert-location{
-    display: inline-block;
+.u-section-1 .u-text-1 {
+  margin: 46px auto 0 11px;
 }
 
-.concert-details {
-    width: 55%;
-
+.u-section-1 .u-layout-wrap-1 {
+  margin-top: 57px;
+  margin-bottom: 60px;
 }
 
-.concert-location{
-    vertical-align: top;
-    margin-left: 20px;
+.u-section-1 .u-layout-cell-1 {
+  min-height: 432px;
 }
 
-.location {
-    width: 340px;
-    height: 340px;
-    background-color: rgba(255, 255, 255, 0.3);
-
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    vertical-align: top;
-    margin-left: 70px;
+.u-section-1 .u-container-layout-1 {
+  padding: 0;
 }
 
-.details {
-    width: 100%;
-    vertical-align: top;
-    margin-left: 30px;
+.u-section-1 .u-group-1 {
+  min-height: 344px;
+  width: 1108px;
+  height: auto;
+  margin: 0 auto;
 }
 
+.u-section-1 .u-container-layout-2 {
+  padding: 0;
+}
 
+.u-section-1 .u-image-1 {
+  width: 241px;
+  height: 264px;
+  margin: 32px 16px 0 auto;
+}
 
-iframe{
-    margin: 20px;
+.u-section-1 .u-text-2 {
+  margin: -247px auto 0 57px;
+}
+
+.u-section-1 .u-text-3 {
+  margin: 72px 397px 0 66px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 889px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 417px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .u-section-1 .u-group-1 {
+    width: 940px;
+    height: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -248px;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: auto;
+    margin-top: 77px;
+    margin-right: 279px;
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 303px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    min-height: 272px;
+  }
+
+  .u-section-1 .u-group-1 {
+    min-height: 348px;
+    width: 720px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: auto;
+    margin-left: 24px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-top: 44px;
+    margin-right: 281px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-1 {
+    margin-top: 47px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    margin-bottom: 33px;
+    min-height: 602px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 380px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .u-section-1 .u-group-1 {
+    min-height: 366px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 144px;
+    height: 157px;
+    margin-top: 93px;
+    margin-right: 31px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -203px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-top: 24px;
+    margin-right: 208px;
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 702px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    margin-top: 27px;
+    margin-bottom: 28px;
+    min-height: 272px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 574px;
+  }
+
+  .u-section-1 .u-group-1 {
+    min-height: 566px;
+    margin-top: -6px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-bottom: 21px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 100px;
+    height: 110px;
+    margin-top: 104px;
+    margin-right: 24px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -166px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 139px;
+  }
 }
