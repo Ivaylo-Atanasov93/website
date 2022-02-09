@@ -9,7 +9,7 @@ He has the  following requirements for the website:
   - To has contact form
   - To display list with his concert dates and locations
   
-  And not required by him but added from me was the Booking forom
+  And not required by him but added from me was the Booking form
   as its his main source of income.
   
   
