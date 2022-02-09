@@ -8,9 +8,9 @@ from email_validator import validate_email, EmailNotValidError
 
 
 def clean_name(name):
-    regex = r"^[A-Z]{1}[a-z]+$"
-    if not re.match(regex, name):
-        raise ValidationError('The name must start with a capital letter.')
+    # regex = r"^[A-Z]{1}[a-z]+$"
+    # if not re.match(regex, name):
+    #     raise ValidationError('The name must start with a capital letter.')
     return name
 
 

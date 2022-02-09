@@ -10,10 +10,13 @@ from contacts.models import ContactMe
 class ContactCreateView(CreateView):
     template_name = 'contact.html'
     form_class = ContactMeForm
+    model = ContactMe
     queryset = ContactMe.objects.all()
 
     def form_valid(self, form):
+        print(f'I AM IN THE FORM, THIS IS THE INFO: {form.cleaned_data}')
         name = form.cleaned_data.get('name')
+        print(f'HERE IS THE NAME: {name}')
         email = form.cleaned_data.get('email')
         customers_message = form.cleaned_data.get('message')
         message = f'Message from {name}\n\n'

@@ -19,15 +19,18 @@
                             <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-1">
                                 <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Follow me</h2>
                                 <div class="u-social-icons u-spacing-20 u-social-icons-1">
-                                    <a class="u-social-url" target="_blank" href="https://www.facebook.com/DimitarKanchev/"><span
+                                    <a class="u-social-url" target="_blank"
+                                       href="https://www.facebook.com/DimitarKanchev/"><span
                                             class="u-file-icon u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1"><img
                                             src="{% static '/images/145802.png' %}" alt=""></span>
                                     </a>
-                                    <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href="https://www.youtube.com/channel/UCcI3ISPTiOLcuWw5DeDKR4w"><span
+                                    <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube"
+                                       href="https://www.youtube.com/channel/UCcI3ISPTiOLcuWw5DeDKR4w"><span
                                             class="u-file-icon u-icon u-social-icon u-social-youtube u-icon-2"><img
                                             src="{% static '/images/187209.png' %}" alt=""></span>
                                     </a>
-                                    <a class="u-social-url" target="_blank" href="https://www.instagram.com/mitonch0/?hl=en"><span
+                                    <a class="u-social-url" target="_blank"
+                                       href="https://www.instagram.com/mitonch0/?hl=en"><span
                                             class="u-file-icon u-icon u-icon-circle u-social-icon u-social-instagram u-icon-3"><img
                                             src="{% static '/images/2111463.png' %}" alt=""></span>
                                     </a>
@@ -38,10 +41,21 @@
                             <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-2">
                                 <h2 class="u-text u-text-palette-3-base u-text-2">Contact Form</h2>
                                 <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
-                                    <form action={% url 'contact-create' %} method="post"
+                                    <form method="post"
                                           class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
-                                          style="padding: 10px" source="custom" name="form-2">
+                                          style="padding: 10px" source="custom" name="form-2"
+                                          action={% url 'contact-create' %}>
+                                        {% csrf_token %}
                                         <div class="u-form-group u-form-name">
+                                            {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="u-form-send-error u-form-send-message">
+                                                            {{ error | escape }}
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            {% endif %}
                                             <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
                                             {{ form.name }}
                                         </div>
@@ -55,9 +69,12 @@
                                             {{ form.message }}
                                         </div>
                                         <div class="u-align-center u-form-group u-form-submit">
-                                            <a href="{% url 'contact-create' %}"
-                                               class="u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1">Submit</a>
-                                            <input type="submit" value="submit" class="u-form-control-hidden">
+                                            {#                                        <a href="#"#}
+                                            {#                                           class="u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1">Submit</a>#}
+                                            {#                                        <input type="submit" value="submit" class="u-form-control-hidden">#}
+                                            <button class=" u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1"
+                                                    type="submit" value="submit">Submit
+                                            </button>
                                         </div>
                                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message
                                             has been sent.
@@ -65,7 +82,8 @@
                                         <div class="u-form-send-error u-form-send-message"> Unable to send your message.
                                             Please fix errors then try again.
                                         </div>
-                                        <input type="hidden" value="{% url 'contact-create' %}" name="recaptchaResponse">
+                                        <input type="hidden" value="{% url 'contact-create' %}"
+                                               name="recaptchaResponse">
                                     </form>
                                 </div>
                             </div>
