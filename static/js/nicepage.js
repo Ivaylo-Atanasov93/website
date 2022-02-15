@@ -1381,76 +1381,76 @@
     }, 7297: function (t, e, i) {
         "use strict";
 
-        // function n() {
-        //     function t(form, url) {
-        //         var t = form.find("input[name=name]").val(), a = form.find("input[name=email]").val(),
-        //             data = {Email: a, EMAIL: a};
-        //         if (t) data.Name = t, data.FNAME = t;
-        //         var s = form.find("input, textarea");
-        //         o.each(s, (function (index, t) {
-        //             var e = o(t).attr("name"), i = o(t).val();
-        //             if (e && i) data[e.toUpperCase()] = i
-        //         }));
-        //         var l = (url = url.replace("/post?", "/post-json?") + "&c=?").indexOf("u=") + 2;
-        //         l = url.substring(l, url.indexOf("&", l));
-        //         var u = url.indexOf("id=") + 3;
-        //         u = url.substring(u, url.indexOf("&", u)), data["b_" + l + "_" + u] = "", o.ajax({
-        //             url: url,
-        //             data: data,
-        //             dataType: "jsonp"
-        //         }).done((function (t) {
-        //             var o;
-        //             if ("success" === t.result || /already/.test(t.msg)) i(form), e(form); else n(form, t.msg)
-        //         })).fail((function () {
-        //             n(form)
-        //         }))
-        //     }
-        //
-        //     function e(form) {
-        //         var dialog;
-        //         new Dialog(form).close()
-        //     }
-        //
-        //     function i(form) {
-        //         form.trigger("reset");
-        //         var t = form.find(".u-form-send-success");
-        //         t.show(), setTimeout((function () {
-        //             t.hide()
-        //         }), 2e3)
-        //     }
-        //
-        //     function n(form, t) {
-        //         var e = t ? form.find(".u-form-send-error").clone() : form.find(".u-form-send-error");
-        //         if (t) e.text(t), form.find(".u-form-send-error").parent().append(e);
-        //         e.show(), setTimeout((function () {
-        //             if (e.hide(), t) e.remove()
-        //         }), 2e3)
-        //     }
-        //
-        //     return {
-        //         submit: function (a) {
-        //             a.preventDefault(), a.stopPropagation();
-        //             var url = o(this).attr("action"), s = o(this).attr("method") || "", l = "";
-        //             if (("" === o(this).attr("") || "" === o(this).attr("")) && "" === o(this).attr("")) l = o(this).attr("") && !o.isNumeric(o(this).attr("redirect-url")) ? o(this).attr("redirect-url") : o(this).attr("redirect-address");
-        //             if (/list-manage[1-9]?.com/i.test(url)) return t(o(this), url), void 0;
-        //             var form = o(this);
-        //             o.ajax({type: s, url: url, data: o(this).serialize(), dataType: ""}).done((function (data) {
-        //                 if (data && (data.success || data.ok)) if (i(form), l) window.location.replace(l); else e(form); else n(form, data.error)
-        //             })).fail((function () {
-        //                 n(form)
-        //             }))
-        //         }, click: function (t) {
-        //             var form;
-        //             t.preventDefault(), t.stopPropagation(), o(this).find(".u-form-send-success").hide(), o(this).find(".u-form-send-error").hide(), o(this).closest("form").find("").click()
-        //         }
-        //     }
-        // }
-        //
-        // var o = i(6), Dialog = i(119);
-        // o((function () {
-        //     var form = new n;
-        //     o("form.u-form-vertical:not(.u-form-custom-backend), form.u-form-horizontal:not(.u-form-custom-backend)").submit(form.submit), o(".u-form .u-form-submit a").click(form.click)
-        // })), window.MailChimpForm = n
+        function n() {
+            function t(form, url) {
+                var t = form.find("input[name=name]").val(), a = form.find("input[name=email]").val(),
+                    data = {Email: a, EMAIL: a};
+                if (t) data.Name = t, data.FNAME = t;
+                var s = form.find("input, textarea");
+                o.each(s, (function (index, t) {
+                    var e = o(t).attr("name"), i = o(t).val();
+                    if (e && i) data[e.toUpperCase()] = i
+                }));
+                var l = (url = url.replace("/post?", "/post-json?") + "&c=?").indexOf("u=") + 2;
+                l = url.substring(l, url.indexOf("&", l));
+                var u = url.indexOf("id=") + 3;
+                u = url.substring(u, url.indexOf("&", u)), data["b_" + l + "_" + u] = "", o.ajax({
+                    url: url,
+                    data: data,
+                    dataType: "jsonp"
+                }).done((function (t) {
+                    var o;
+                    if ("success" === t.result || /already/.test(t.msg)) i(form), e(form); else n(form, t.msg)
+                })).fail((function () {
+                    n(form)
+                }))
+            }
+
+            // function e(form) {
+            //     var dialog;
+            //     new Dialog(form).close()
+            // }
+
+            // function i(form) {
+            //     form.trigger("reset");
+            //     var t = form.find(".u-form-send-success");
+            //     t.show(), setTimeout((function () {
+            //         t.hide()
+            //     }), 2e3)
+            // }
+
+            // function n(form, t) {
+            //     var e = t ? form.find(".u-form-send-error").clone() : form.find(".u-form-send-error");
+            //     if (t) e.text(t), form.find(".u-form-send-error").parent().append(e);
+            //     e.show(), setTimeout((function () {
+            //         if (e.hide(), t) e.remove()
+            //     }), 2e3)
+            // }
+
+            return {
+                submit: function (a) {
+                    a.preventDefault(), a.stopPropagation();
+                    var url = o(this).attr("action"), s = o(this).attr("method") || "", l = "";
+                    if (("" === o(this).attr("") || "" === o(this).attr("")) && "" === o(this).attr("")) l = o(this).attr("") && !o.isNumeric(o(this).attr("redirect-url")) ? o(this).attr("redirect-url") : o(this).attr("redirect-address");
+                    if (/list-manage[1-9]?.com/i.test(url)) return t(o(this), url), void 0;
+                    var form = o(this);
+                    o.ajax({type: s, url: url, data: o(this).serialize(), dataType: ""}).done((function (data) {
+                        if (data && (data.success || data.ok)) if (i(form), l) window.location.replace(l); else e(form); else n(form, data.error)
+                    })).fail((function () {
+                        n(form)
+                    }))
+                }, click: function (t) {
+                    var form;
+                    t.preventDefault(), t.stopPropagation(), o(this).closest("form").find("").click()
+                }
+            }
+        }
+
+        var o = i(6), Dialog = i(119);
+        o((function () {
+            var form = new n;
+            o("form.u-form-vertical:not(.u-form-custom-backend), form.u-form-horizontal:not(.u-form-custom-backend)").submit(form.submit), o(".u-form .u-form-submit a").click(form.click)
+        })), window.MailChimpForm = n
     }, 7298: function (t, e, i) {
         "use strict";
 

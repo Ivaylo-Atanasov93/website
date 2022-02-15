@@ -71,51 +71,49 @@
                 <img class="u-expand-resize u-expanded-width-xs u-image u-image-1" data-image-width="1040"
                      data-image-height="693" src={% static '/images/12.jpg ' %}>
                 <div class="u-form u-form-1">
-                    <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;" name="form" method="post" action={% url 'booking' %}>
-                            {% csrf_token %}
+                    <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;"
+                           method="post" action={% url 'booking' %}>
+                        {% csrf_token %}
                         <div class="u-form-email u-form-group">
                             <label for="email-31f5" class="u-form-control-hidden u-label">Email</label>
                             {{ form.email }}
                         </div>
                         <div class="u-form-group u-form-name">
-                            <label for="name-31f5" class="u-form-control-hidden u-label">Name</label>
+                            <label  class="u-form-control-hidden u-label">Name</label>
                             {{ form.name }}
                         </div>
                         <div class="u-form-group u-form-name">
-                            <label for="name-31f5" class="u-form-control-hidden u-label">Name</label>
+                            <label  class="u-form-control-hidden u-label">Name</label>
                             {{ form.number }}
                         </div>
                         <div class="u-form-date u-form-group u-form-group-3">
-                            <label for="date-f650" class="u-form-control-hidden u-label"></label>
+                            <label  class="u-form-control-hidden u-label"></label>
                             {{ form.date }}
                         </div>
                         <div class="u-form-group u-form-group-4">
-                            <label for="text-3c7c" class="u-form-control-hidden u-label"></label>
+                            <label class="u-form-control-hidden u-label"></label>
                             {{ form.time }}
                         </div>
                         <div class="u-form-group u-form-message">
-                            <label for="message-31f5" class="u-form-control-hidden u-label">Message</label>
+                            <label class="u-form-control-hidden u-label">Message</label>
                             {{ form.message }}
                         </div>
                         <div class="u-align-center u-form-submit">
-{#                            <a href="/contacts/" class="u-black u-btn u-btn-submit u-button-style u-btn-1">Submit</a>#}
-{#                            <input type="submit" value="submit" class="u-form-control-hidden">#}
-                            <button class="u-black u-btn u-btn-submit u-button-style u-btn-1" type="submit" value="submit">Submit</button>
+                            {#                            <a href="/contacts/" class="u-black u-btn u-btn-submit u-button-style u-btn-1">Submit</a>#}
+                            {#                            <input type="submit" value="submit" class="u-form-control-hidden">#}
+                            <button class="u-black u-btn u-btn-submit u-button-style u-btn-1" type="submit"
+                                    value="submit">Submit
+                            </button>
                         </div>
-                        {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in field.errors %}
-                                    <div class="u-form-send-error u-form-send-message">
-                                        {{ error | escape }}
-                                    </div>
-                                {% endfor %}
-                            {% endfor %}
-                        {% endif %}
                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent.
                         </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix
-                            errors then try again.
-                        </div>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="u-form-send-error u-form-send-message">
+                                    {{ error | escape }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
                         <input type="hidden" value={% url 'booking' %} name="recaptchaResponse">
                     </form>
                 </div>

@@ -79,9 +79,14 @@
                                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message
                                             has been sent.
                                         </div>
-                                        <div class="u-form-send-error u-form-send-message"> Unable to send your message.
-                                            Please fix errors then try again.
-                                        </div>
+                                        {% for field in form %}
+                                            {% for error in field.errors %}
+                                                <div class="u-form-send-error u-form-send-message">
+
+                                                    {{ error | escape }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
                                         <input type="hidden" value="{% url 'contact-create' %}"
                                                name="recaptchaResponse">
                                     </form>
