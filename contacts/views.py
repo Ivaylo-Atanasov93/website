@@ -1,4 +1,6 @@
 from django.core.mail import send_mail
+import logging
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.views.generic import CreateView, DetailView
@@ -14,9 +16,9 @@ class ContactCreateView(CreateView):
     queryset = ContactMe.objects.all()
 
     def form_valid(self, form):
-        print(f'I AM IN THE FORM, THIS IS THE INFO: {form.cleaned_data}')
+        logging.info(f'I AM IN THE FORM, THIS IS THE INFO: {form.cleaned_data}')
         name = form.cleaned_data.get('name')
-        print(f'HERE IS THE NAME: {name}')
+        logging.info(f'HERE IS THE NAME: {name}')
         email = form.cleaned_data.get('email')
         customers_message = form.cleaned_data.get('message')
         message = f'Message from {name}\n\n'
@@ -30,6 +32,17 @@ class ContactCreateView(CreateView):
         # )
 
         return super().form_valid(form)
+
+
+# def basic_view(request):
+#     print(request.POST)
+#     # print(f'I AM IN THE FORM, THIS IS THE INFO: {form.cleaned_data}')
+#     # name = form.cleaned_data.get('name')
+#     # print(f'HERE IS THE NAME: {name}')
+#     # email = form.cleaned_data.get('email')
+#     # customers_message = form.cleaned_data.get('message')
+#     # response = {'topic': "Hello WOrld"}
+#     return JsonResponse(['wagwan'])
 
 
 class ContactView(DetailView):

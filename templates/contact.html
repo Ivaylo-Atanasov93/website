@@ -47,15 +47,6 @@
                                           action={% url 'contact-create' %}>
                                         {% csrf_token %}
                                         <div class="u-form-group u-form-name">
-                                            {% if form.errors %}
-                                                {% for field in form %}
-                                                    {% for error in field.errors %}
-                                                        <div class="u-form-send-error u-form-send-message">
-                                                            {{ error | escape }}
-                                                        </div>
-                                                    {% endfor %}
-                                                {% endfor %}
-                                            {% endif %}
                                             <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
                                             {{ form.name }}
                                         </div>
@@ -69,24 +60,26 @@
                                             {{ form.message }}
                                         </div>
                                         <div class="u-align-center u-form-group u-form-submit">
-                                            {#                                        <a href="#"#}
-                                            {#                                           class="u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1">Submit</a>#}
-                                            {#                                        <input type="submit" value="submit" class="u-form-control-hidden">#}
-                                            <button class=" u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1"
-                                                    type="submit" value="submit">Submit
-                                            </button>
+                                            <a href="#"
+                                               class="u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1">Submit</a>
+                                            <input type="submit" value="submit" class="u-form-control-hidden">
+                                            {#                                            <button class=" u-border-2 u-border-black u-border-hover-palette-3-base u-btn u-btn-submit u-button-style u-hover-black u-palette-3-base u-text-black u-text-hover-white u-btn-1"#}
+                                            {#                                                    type="submit" value="submit">Submit#}
+                                            {#                                            </button>#}
                                         </div>
                                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message
                                             has been sent.
                                         </div>
-                                        {% for field in form %}
-                                            {% for error in field.errors %}
-                                                <div class="u-form-send-error u-form-send-message">
-
-                                                    {{ error | escape }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endfor %}
+                                        {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="u-form-send-error u-form-send-message">
+                                                            {{ error | escape }}
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        <div class="u-form-send-error u-form-send-message"></div>
                                         <input type="hidden" value="{% url 'contact-create' %}"
                                                name="recaptchaResponse">
                                     </form>

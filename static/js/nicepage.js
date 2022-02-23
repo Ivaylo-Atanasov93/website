@@ -1406,42 +1406,43 @@
                 }))
             }
 
-            // function e(form) {
-            //     var dialog;
-            //     new Dialog(form).close()
-            // }
+            function e(form) {
+                var dialog;
+                new Dialog(form).close()
+            }
 
-            // function i(form) {
-            //     form.trigger("reset");
-            //     var t = form.find(".u-form-send-success");
-            //     t.show(), setTimeout((function () {
-            //         t.hide()
-            //     }), 2e3)
-            // }
+            function i(form) {
+                form.trigger("reset");
+                var t = form.find(".u-form-send-success");
+                t.show(), setTimeout((function () {
+                    t.hide()
+                }), 8000)
+            }
 
-            // function n(form, t) {
-            //     var e = t ? form.find(".u-form-send-error").clone() : form.find(".u-form-send-error");
-            //     if (t) e.text(t), form.find(".u-form-send-error").parent().append(e);
-            //     e.show(), setTimeout((function () {
-            //         if (e.hide(), t) e.remove()
-            //     }), 2e3)
-            // }
+            function n(form, t) {
+                var e = t ? form.find(".u-form-send-error").clone() : form.find(".u-form-send-error");
+                if (t) e.text(t), form.find(".u-form-send-error").parent().append(e);
+                e.show(), setTimeout((function () {
+                    if (e.hide(), t) e.remove()
+                }), 8000)
+            }
 
             return {
                 submit: function (a) {
-                    a.preventDefault(), a.stopPropagation();
-                    var url = o(this).attr("action"), s = o(this).attr("method") || "", l = "";
-                    if (("" === o(this).attr("") || "" === o(this).attr("")) && "" === o(this).attr("")) l = o(this).attr("") && !o.isNumeric(o(this).attr("redirect-url")) ? o(this).attr("redirect-url") : o(this).attr("redirect-address");
+                    a.stopPropagation();
+                    var url = o(this).attr("action"), s = o(this).attr("method") || "POST", l = "";
+                    if (("email" === o(this).attr("source") || "customphp" === o(this).attr("source")) && "true" === o(this).attr("redirect")) l = o(this).attr("redirect-url") && !o.isNumeric(o(this).attr("redirect-url")) ? o(this).attr("redirect-url") : o(this).attr("redirect-address");
                     if (/list-manage[1-9]?.com/i.test(url)) return t(o(this), url), void 0;
                     var form = o(this);
-                    o.ajax({type: s, url: url, data: o(this).serialize(), dataType: ""}).done((function (data) {
+                    o.ajax({type: s, url: url, data: o(this).serialize(), dataType: "json"}).done((function (data) {
                         if (data && (data.success || data.ok)) if (i(form), l) window.location.replace(l); else e(form); else n(form, data.error)
                     })).fail((function () {
                         n(form)
                     }))
-                }, click: function (t) {
+                },
+                click: function (t) {
                     var form;
-                    t.preventDefault(), t.stopPropagation(), o(this).closest("form").find("").click()
+                    t.stopPropagation(), o(this).find(".u-form-send-success").hide(), o(this).find(".u-form-send-error").hide(), o(this).closest("form").find(":submit").click()
                 }
             }
         }
