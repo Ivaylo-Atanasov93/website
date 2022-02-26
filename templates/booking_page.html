@@ -61,7 +61,7 @@
         </div>
     </section>
     <section
-            class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-65 u-valign-middle-lg u-valign-middle-xl u-section-4"
+            class=" {% if form.errors %} u-dialog-open {% endif %} u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-65 u-valign-middle-lg u-valign-middle-xl u-section-4"
             id="sec-6694">
         <div class="u-align-center u-container-style u-dialog u-shape-rectangle u-white u-dialog-1">
             <div class="u-container-layout u-container-layout-1">
@@ -109,7 +109,7 @@
                         </div>
                         {% for field in form %}
                             {% for error in field.errors %}
-                                <div class="u-form-send-error u-form-send-message">
+                                <div class="error-message">
                                     {{ error | escape }}
                                 </div>
                             {% endfor %}

@@ -5536,10 +5536,10 @@ a {
 .u-form .u-form-vertical .u-form-group.u-form-agree {
   align-items: baseline;
 }
-.u-form-send-message {
+.error-message {
   z-index: 1;
 }
-.u-form-send-error {
+.error-message {
   background: #F95D51;
 }
 .u-form-send-success {

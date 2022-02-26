@@ -73,13 +73,12 @@
                                         {% if form.errors %}
                                                 {% for field in form %}
                                                     {% for error in field.errors %}
-                                                        <div class="u-form-send-error u-form-send-message">
+                                                        <div class="error-message">
                                                             {{ error | escape }}
                                                         </div>
                                                     {% endfor %}
                                                 {% endfor %}
                                             {% endif %}
-                                        <div class="u-form-send-error u-form-send-message"></div>
                                         <input type="hidden" value="{% url 'contact-create' %}"
                                                name="recaptchaResponse">
                                     </form>

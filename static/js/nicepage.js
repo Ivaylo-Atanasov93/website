@@ -1399,9 +1399,12 @@
                     data: data,
                     dataType: "jsonp"
                 }).done((function (t) {
+                    console.log('here')
+                    console.log(t)
                     var o;
                     if ("success" === t.result || /already/.test(t.msg)) i(form), e(form); else n(form, t.msg)
                 })).fail((function () {
+                    console.log('n')
                     n(form)
                 }))
             }
