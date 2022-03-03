@@ -30,7 +30,7 @@ SECRET_KEY = '***********************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+DISABLE_COLLECTSTATIC = False
 ALLOWED_HOSTS = ['herokuapp.com', '127.0.0.1.']
 
 LOGGING = {
