@@ -113,7 +113,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'piano_teacher_website',
             'USER': 'postgres',
-            'PASSWORD': DB_PASSWORD,  # Environmental variable
+            'PASSWORD': os.environ.get('DB_PASSWORD'),  # Environmental variable
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
@@ -164,7 +164,7 @@ STATICFILES_DIRS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'dimitar.kanchev.website@gmail.com'
-EMAIL_HOST_PASSWORD = EMAIL_PASSWORD  # Environmental variable
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')  # Environmental variable
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
 '''
