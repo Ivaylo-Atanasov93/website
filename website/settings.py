@@ -162,10 +162,10 @@ STATICFILES_DIRS = (
 )
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
+EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'dimitar.kanchev.website@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')  # Environmental variable
-EMAIL_USE_TLS = True
+EMAIL_PORT = 465
 DEFAULT_FROM_EMAIL = 'default from email'
 '''
 TODO
