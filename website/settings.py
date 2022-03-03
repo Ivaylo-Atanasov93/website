@@ -16,6 +16,8 @@ import django_heroku
 import dj_database_url
 from decouple import config
 
+from website.password import email_password
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '***********************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['dimitarkanchev.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -144,9 +146,10 @@ STATICFILES_DIRS = (
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'dimitar.kanchev1993@gmail.com'
-EMAIL_HOST_PASSWORD = 'y**************'  # Environmental variable
+EMAIL_HOST_USER = 'dimitar.kanchev.website@gmail.com'
+EMAIL_HOST_PASSWORD = email_password  # Environmental variable
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'default from email'
 '''
 TODO
 Variant 1:

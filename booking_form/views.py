@@ -25,12 +25,12 @@ class BookingCreateView(CreateView):
         message += f'The lesson is booked on {date} at {time}\n'
         message += f'\n\n{customers_message}\n\n'
         message += f'Contacts:\n\nPhone: {number}\nE-mail: {email}'
-        # send_mail(
-        #     subject=f'New booked lesson from {name}!',
-        #     message=message,
-        #     from_email='dimitar.kanchev1993@gmail.com',
-        #     recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
-        # )
+        send_mail(
+            subject=f'New booked lesson from {name}!',
+            message=message,
+            from_email='dimitar.kanchev1993@gmail.com',
+            recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
+        )
 
         return super().form_valid(form)
 

@@ -73,7 +73,7 @@
                                         {% if form.errors %}
                                                 {% for field in form %}
                                                     {% for error in field.errors %}
-                                                        <div class="error-message">
+                                                        <div class="error-message u-form-group ">
                                                             {{ error | escape }}
                                                         </div>
                                                     {% endfor %}
