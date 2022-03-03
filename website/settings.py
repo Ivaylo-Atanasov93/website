@@ -114,7 +114,7 @@ DATABASES = {
             'NAME': 'piano_teacher_website',
             'USER': 'postgres',
             'PASSWORD': os.environ.get('DB_PASSWORD'),  # Environmental variable
-            'HOST': '127.0.0.1',
+            'HOST': 'ec2-54-220-243-77.eu-west-1.compute.amazonaws.com',
             'PORT': '5432',
         }
     }
