@@ -16,7 +16,7 @@ import django_heroku
 import dj_database_url
 from decouple import config
 
-from website.password import email_password
+from website.password import email_password, db_password
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -31,7 +31,7 @@ SECRET_KEY = '***********************************************'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dimitarkanchev.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['herokuapp.com', ]
 
 # Application definition
 
@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'piano_teacher_website',
         'USER': 'postgres',
-        'PASSWORD': 'par0lka',
+        'PASSWORD': db_password,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
