@@ -25,7 +25,7 @@ class ContactCreateView(CreateView):
         send_mail(
             subject=f'New booked lesson from {name}!',
             message=message,
-            from_email='dimitar.kanchev1993@gmail.com',
+            from_email='dimitar.kanchev.website@gmail.com',
             recipient_list=[email, 'dimitar.kanchev1993@abv.bg'],
         )
 
