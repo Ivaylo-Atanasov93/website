@@ -17,8 +17,6 @@ import dj_database_url
 from decouple import config
 import logging
 
-from website.password import email_password, db_password
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +29,6 @@ SECRET_KEY = '***********************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 
 ALLOWED_HOSTS = ['herokuapp.com', '127.0.0.1.']
 
@@ -115,7 +112,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'piano_teacher_website',
         'USER': 'postgres',
-        'PASSWORD': db_password,
+        'PASSWORD': DB_PASSWORD,  # Environmental variable
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -165,7 +162,7 @@ STATICFILES_DIRS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'dimitar.kanchev.website@gmail.com'
-EMAIL_HOST_PASSWORD = email_password  # Environmental variable
+EMAIL_HOST_PASSWORD = EMAIL_PASSWORD  # Environmental variable
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
 '''
