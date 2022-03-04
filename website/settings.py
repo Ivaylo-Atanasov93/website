@@ -48,6 +48,7 @@ LOGGING = {
         },
     },
 }
+ADMINS = [('Ivaylo', os.environ.get('ADMIN_EMAIL'))]
 
 # Application definition
 
