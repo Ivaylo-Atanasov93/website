@@ -166,7 +166,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dimitar.kanchev.website@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')  # Environmental variable
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'default from email'
+DEFAULT_FROM_EMAIL = 'dimitar.kanchev.website@gmail.com'
+SERVER_EMAIL = 'dimitar.kanchev.website@gmail.com'
 '''
 TODO
 Variant 1:
