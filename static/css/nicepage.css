@@ -15431,6 +15431,9 @@ section.u-image,
   right: 0;
   bottom: 0;
 }
+.u-social-facebook{
+    background-color: #4267B2;
+}
 [class*="u-border-"]:not(.u-shape-svg) {
   stroke: none;
 }
