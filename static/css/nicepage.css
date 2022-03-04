@@ -4,6 +4,18 @@
  * Copyright 2014-2021 Froala Labs
  */
 
+#body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 20px;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
 .fr-clearfix::after {
   clear: both;
   display: block;
