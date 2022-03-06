@@ -10,30 +10,30 @@
     Video Gallery
 {% endblock %}
 {% block site_content %}
-{#    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"#}
-{#             data-animation-delay="0" data-animation-direction="">#}
-{#        <div class="u-clearfix u-sheet u-sheet-1">#}
-{#            <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Video Gallery</h2>#}
-{#        </div>#}
-{#        {% for element in object_list %}#}
-{#            <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""#}
-{#                     data-animation-duration="0" data-animation-delay="0" data-animation-direction="">#}
-{#                <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">#}
-{#                    <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">#}
-{#                        <div class="u-container-layout u-container-layout-1">#}
-{#                            <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>#}
-{#                            <p class="u-text u-text-2">{{ element.description }}</p>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>#}
-{#                    <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"#}
-{#                            data-image-height="1333">#}
-{#                        {% video element.video_url '100% x 100%' %}#}
-{#                    </object>#}
-{#                </div>#}
-{#            </section>#}
-{#        {% endfor %}#}
-{#    </section>#}
+    {#    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"#}
+    {#             data-animation-delay="0" data-animation-direction="">#}
+    {#        <div class="u-clearfix u-sheet u-sheet-1">#}
+    {#            <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Video Gallery</h2>#}
+    {#        </div>#}
+    {#        {% for element in object_list %}#}
+    {#            <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""#}
+    {#                     data-animation-duration="0" data-animation-delay="0" data-animation-direction="">#}
+    {#                <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">#}
+    {#                    <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">#}
+    {#                        <div class="u-container-layout u-container-layout-1">#}
+    {#                            <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>#}
+    {#                            <p class="u-text u-text-2">{{ element.description }}</p>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>#}
+    {#                    <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"#}
+    {#                            data-image-height="1333">#}
+    {#                        {% video element.video_url '100% x 100%' %}#}
+    {#                    </object>#}
+    {#                </div>#}
+    {#            </section>#}
+    {#        {% endfor %}#}
+    {#    </section>#}
     <section class="u-black u-clearfix u-section-1" id="sec-f775">
         <div class="u-clearfix u-sheet u-sheet-1">
             <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Live Concerts</h2>
@@ -42,26 +42,42 @@
                     <div class="u-layout-row">
                         <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                             <div class="u-container-layout u-container-layout-1">
-                                {% for element in object_list %}
-                                    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""
-                                             data-animation-duration="0" data-animation-delay="0"
-                                             data-animation-direction="">
-                                        <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-                                            <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">
-                                                <div class="u-container-layout u-container-layout-1">
-                                                    <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>
-                                                    <p class="u-text u-text-2">{{ element.description }}</p>
+                                {% if object_list %}
+
+                                    {% for element in object_list %}
+                                            <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+                                                <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">
+                                                    <div class="u-container-layout u-container-layout-1">
+                                                        <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>
+                                                        <p class="u-text u-text-2">{{ element.description }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
+                                                <object class="u-align-left u-expanded-width-xs u-image u-image-1"
+                                                        data-image-width="2000"
+                                                        data-image-height="1333">
+                                                    {% video element.video_url '100% x 100%' %}
+                                                </object>
+                                            </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <ul class="concerts-list" style="list-style: none;">
+                                        <li>
+                                            <div class="u-border-4 u-border-palette-3-base u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+                                                <div class="u-container-layout u-container-layout-2">
+                                                    {#                                                        <iframe class="u-image u-image-1"#}
+                                                    {#                                                                src="None" data-image-width="256"#}
+                                                    {#                                                                data-image-height="256" allowfullscreen=""#}
+                                                    {#                                                                loading="lazy"></iframe>#}
+                                                    <h3 class="u-text u-text-default u-text-palette-3-base u-text-2">
+                                                        Unfortunately there are no uploaded videos yet.</h3>
+                                                    <p class="u-text u-text-3">You can check my YouTube channel from the
+                                                        link at the bottom of the page</p>
                                                 </div>
                                             </div>
-                                            <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
-                                            <object class="u-align-left u-expanded-width-xs u-image u-image-1"
-                                                    data-image-width="2000"
-                                                    data-image-height="1333">
-                                                {% video element.video_url '100% x 100%' %}
-                                            </object>
-                                        </div>
-                                    </section>
-                                {% endfor %}
+                                        </li>
+                                    </ul>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
