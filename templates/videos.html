@@ -10,80 +10,28 @@
     Video Gallery
 {% endblock %}
 {% block site_content %}
-        <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"
-                 data-animation-delay="0" data-animation-direction="">
-            {% for element in object_list %}
-                <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""
-                         data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-                        <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">
-                            <div class="u-container-layout u-container-layout-1">
-                                <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>
-                                <p class="u-text u-text-2">{{ element.description }}</p>
-                            </div>
+    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"
+             data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Live Concerts</h2>
+        </div>
+        {% for element in object_list %}
+            <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""
+                     data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+                    <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">
+                        <div class="u-container-layout u-container-layout-1">
+                            <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>
+                            <p class="u-text u-text-2">{{ element.description }}</p>
                         </div>
-                        <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
-                        <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"
-                             data-image-height="1333">
-                            {% video element.video_url '100% x 100%'%}
-                        </object>
                     </div>
-                </section>
-            {% endfor %}
-        </section>
-{#    <section class="u-black u-clearfix u-section-1" id="sec-e36e">#}
-{#        <div class="u-clearfix u-sheet u-sheet-1">#}
-{#            <h2 class="u-text u-text-palette-3-base u-text-1">Video Performances</h2>#}
-{#            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">#}
-{#                <div class="u-gutter-0 u-layout">#}
-{#                    <div class="u-layout-col">#}
-{#                        <div class="u-size-40">#}
-{#                            <div class="u-layout-row">#}
-{#                                <div class="u-size-40">#}
-{#                                    <div class="u-layout-col">#}
-{#                                        <div class="u-container-style u-image u-layout-cell u-size-60 u-image-1"#}
-{#                                             data-image-width="1500" data-image-height="1000">#}
-{#                                            <div class="u-container-layout u-container-layout-1">{% video object_list.0.video_url '100% x 100%'%}</div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="u-size-20">#}
-{#                                    <div class="u-layout-col">#}
-{#                                        <div class="u-align-left u-container-style u-image u-layout-cell u-size-30 u-image-2"#}
-{#                                             data-image-width="1280" data-image-height="855">#}
-{#                                            <div class="u-container-layout u-container-layout-2">{% video object_list.0.video_url '100% x 100%'%}</div>#}
-{#                                        </div>#}
-{#                                        <div class="u-container-style u-image u-layout-cell u-size-30 u-image-3"#}
-{#                                             data-image-width="1280" data-image-height="853">#}
-{#                                            <div class="u-container-layout u-container-layout-3">{% video object_list.0.video_url '100% x 100%'%}</div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="u-size-20">#}
-{#                            <div class="u-layout-row">#}
-{#                                <div class="u-container-style u-image u-layout-cell u-size-20 u-image-4"#}
-{#                                     data-image-width="1280" data-image-height="853">#}
-{#                                    <div class="u-container-layout u-container-layout-4">{% video object_list.0.video_url '100% x 100%'%}</div>#}
-{#                                </div>#}
-{#                                <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-5">#}
-{#                                    <div class="u-container-layout u-container-layout-5">#}
-{#                                        {% video object_list.0.video_url '100% x 100%'%}#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="u-container-style u-image u-layout-cell u-size-20 u-image-6"#}
-{#                                     data-image-width="1280" data-image-height="854">#}
-{#                                    <div class="u-container-layout u-container-layout-6">{% video object_list.0.video_url '100% x 100%'%}</div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="u-list u-list-1">#}
-{#                <div class="u-repeater u-repeater-1"></div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
+                    <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
+                    <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"
+                            data-image-height="1333">
+                        {% video element.video_url '100% x 100%' %}
+                    </object>
+                </div>
+            </section>
+        {% endfor %}
+    </section>
 {% endblock %}
