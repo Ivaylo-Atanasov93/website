@@ -10,8 +10,10 @@
     Video Gallery
 {% endblock %}
 {% block site_content %}
-        <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"
-                 data-animation-delay="0" data-animation-direction="">
+    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"
+             data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-default u-text-palette-3-base u-text-1">Live Concerts</h2>
             {% for element in object_list %}
                 <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""
                          data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
@@ -24,11 +26,12 @@
                         </div>
                         <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
                         <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"
-                             data-image-height="1333">
-                            {% video element.video_url '100% x 100%'%}
+                                data-image-height="1333">
+                            {% video element.video_url '100% x 100%' %}
                         </object>
                     </div>
                 </section>
             {% endfor %}
-        </section>
+        </div>
+    </section>
 {% endblock %}
