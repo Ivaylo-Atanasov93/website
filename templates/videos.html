@@ -10,25 +10,32 @@
     Video Gallery
 {% endblock %}
 {% block site_content %}
-    <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name="" data-animation-duration="0"
-             data-animation-delay="0" data-animation-direction="">
-            {% for element in object_list %}
-                <section class="u-black u-clearfix u-section-1" id="sec-bdae" data-animation-name=""
-                         data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-                        <div class="u-border-5 u-border-palette-3-base u-container-style u-expanded-width-xs u-group u-group-1">
-                            <div class="u-container-layout u-container-layout-1">
-                                <h2 class="u-text u-text-default u-text-1">{{ element.title }}</h2>
-                                <p class="u-text u-text-2">{{ element.description }}</p>
+    <section class="u-black u-clearfix u-section-1" id="sec-bdae">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-palette-3-base u-text-1">
+                Performances on Video</h2>
+            <div class="u-list u-list-1">
+
+                <div class="u-repeater u-repeater-1">
+                    {% for element in object_list %}
+                        <div class="u-container-style u-list-item u-repeater-item">
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <div class="u-align-left u-custom-item u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
+                                <div class="u-border-5 u-border-palette-3-base u-container-style u-custom-item u-expanded-width-xs u-group u-group-1">
+                                    <div class="u-container-layout u-container-layout-2">
+                                        <h2 class="u-custom-item u-text u-text-2">{{ element.title }}</h2>
+                                        <p class="u-custom-item u-text u-text-3">{{ element.description }}</p>
+                                    </div>
+                                </div>
+                                <object class="u-align-left u-expanded-width-xs u-image u-image-1">
+                                    {% video element.video_url '100% x 100%' %}
+                                </object>
                             </div>
                         </div>
-                        <div class="u-align-left u-expanded-width-xs u-left-0 u-palette-3-base u-shape u-shape-1"></div>
-                        <object class="u-align-left u-expanded-width-xs u-image u-image-1" data-image-width="2000"
-                                data-image-height="1333">
-                            {% video element.video_url '100% x 100%' %}
-                        </object>
-                    </div>
-                </section>
-            {% endfor %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
     </section>
 {% endblock %}
