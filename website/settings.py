@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECURITY_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 DISABLE_COLLECTSTATIC = False
-ALLOWED_HOSTS = ['.herokuapp.com', ]
+ALLOWED_HOSTS = ['dimitarkanchev.herokuapp.com', ]
 
 LOGGING = {
     'version': 1,
