@@ -7,7 +7,7 @@ class Biography(models.Model):
     summary_title = models.CharField(max_length=255, default='Summary Title')
     summary = models.TextField(max_length=800)
     academic_achievements_title = models.CharField(max_length=255, default='Academic Achievements Title')
-    academic_achievements = models.TextField(max_length=500, default='No Academic Achievements saved')
+    academic_achievements = models.TextField(max_length=650, default='No Academic Achievements saved')
     childhood_title = models.CharField(max_length=255, default='Childhood Title')
     childhood_1 = models.TextField(max_length=240, default='No Childhood 1 saved')
     childhood_2 = models.TextField(max_length=290, default='No Childhood 2 saved')
